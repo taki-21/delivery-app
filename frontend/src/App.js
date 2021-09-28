@@ -9,13 +9,13 @@ import {
 // components
 import {
   Restaurants
-} from './containers/Restaurants.jsx';
+} from './containers/Restaurants';
 import {
   Foods
-} from './containers/Foods.jsx';
+} from './containers/Foods';
 import {
   Orders
-} from './containers/Orders.jsx';
+} from './containers/Orders';
 
 function App() {
   return (
@@ -30,6 +30,20 @@ function App() {
         <Route exact path = "/orders" >
           <Orders / >
         </Route>
+        < Route exact path = "/restaurants/:restaurantsId/foods"
+        render = {
+          ({
+            match
+          }) =>
+          <
+          Foods
+          match = {
+            match
+          }
+          />
+        }
+
+        />
       </Switch>
     </Router>
   );
