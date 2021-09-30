@@ -20,32 +20,19 @@ import {
 function App() {
   return (
     <Router>
-      <Switch >
+      <Switch>
         <Route exact path = "/restaurants" >
           <Restaurants / >
         </Route>
-        <Route exact path = "/foods" >
+        <Route exact path="/foods" >
           <Foods / >
         </Route>
-        <Route exact path = "/orders" >
+        <Route exact path="/orders" >
           <Orders / >
         </Route>
-        < Route exact path = "/restaurants/:restaurantsId/foods"
-        render = {
-          ({
-            match
-          }) =>
-          <
-          Foods
-          match = {
-            match
-          }
-          />
-        }
-
-        />
-      </Switch>
-    </Router>
+        <Route exact path="/restaurants/:restaurantsId/foods" render={({ match }) => <Foods match = { match } />} />
+      </ Switch >
+      </Router>
   );
 }
 
